@@ -1,7 +1,16 @@
+//
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Route from './src/Route/Route';
+import Multiselect from './src/screens/Multiselect';
+
 const App = () => {
-  return <Route />;
+  return (
+    <View style={{flex: 1}}>
+      <Multiselect />
+    </View>
+  );
 };
 
 export default App;
+
+const styles = StyleSheet.create({});

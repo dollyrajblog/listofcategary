@@ -23,6 +23,7 @@ const Splash = ({navigation}) => {
       url: 'https://dummyjson.com/products?limit=100',
     })
       .then(res => {
+        console.log('==res', res);
         const data = res?.data?.products;
         setAllList(res?.data?.products);
         let newArray = [];
@@ -34,7 +35,7 @@ const Splash = ({navigation}) => {
         for (i in uniqueObject) {
           newArray.push(uniqueObject[i]);
         }
-        console.log(newArray, '===>');
+        // console.log(newArray, '===>');
         setListData(newArray);
       })
       .catch(err => {
