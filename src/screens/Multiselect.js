@@ -108,7 +108,8 @@ const Multiselect = () => {
     3: 33,
     4: 42,
   });
-  
+  const [state, setState] = useState(false);
+
   //   ====== ONPress function ======
   const ONPressFun = (data, multiselect, categoryid) => {
     if (!multiselect) {
@@ -130,6 +131,7 @@ const Multiselect = () => {
       }
     }
     console.log(storeSelect);
+    setState(!state);
   };
   // ===== Element color change if select the element ===
   const colorChange = (optionid, categoryid) => {
@@ -198,6 +200,7 @@ const Multiselect = () => {
           renderItem={item => renderItem2(item, multiselect, categoryid)}
           horizontal
           showsHorizontalScrollIndicator
+          extraData={storeSelect}
         />
       </View>
     );
@@ -215,7 +218,11 @@ const Multiselect = () => {
           }}>
           Filter
         </Text>
-        <FlatList data={data} renderItem={item => renderItem1(item)} />
+        <FlatList
+          extraData={storeSelect}
+          data={data}
+          renderItem={item => renderItem1(item)}
+        />
       </View>
     </SafeAreaView>
   );
