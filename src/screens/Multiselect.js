@@ -102,12 +102,7 @@ const data = [
   },
 ];
 const Multiselect = () => {
-  const [storeSelect, setStoreSelect] = useState({
-    1: [11, 12],
-    2: [21],
-    3: 33,
-    4: 42,
-  });
+  const [storeSelect, setStoreSelect] = useState({});
   const [state, setState] = useState(false);
 
   //   ====== ONPress function ======
@@ -150,7 +145,7 @@ const Multiselect = () => {
         }
       }
     } else {
-      return true;
+      return false;
     }
   };
   // ===== Second flatlist renderitem2 =====
